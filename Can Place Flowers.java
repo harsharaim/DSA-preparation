@@ -12,6 +12,10 @@
 // Input: flowerbed = [1,0,0,0,1], n = 2
 // Output: false
 
+// Example 3:
+// Input: flowerbed = [0,0,0,0,1], n = 2
+// Output: true
+
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         if(n==0) return true; // if n=0 answer always true
