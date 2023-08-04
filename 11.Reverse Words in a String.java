@@ -24,15 +24,15 @@
 class Solution {
     public String reverseWords(String s) {
         if(s==null || s.length()==0) return "";
-        s=s.trim();
-        StringBuilder res=new StringBuilder();
-        String[] words=s.split(" ");
-        for(int i=words.length-1;i>=0;i--){
+        s=s.trim(); //remove extra space from left and right of the string 
+        StringBuilder res=new StringBuilder(); 
+        String[] words=s.split(" "); // create a string array with words in the string s as element
+        for(int i=words.length-1;i>=0;i--){ 
             if(!words[i].equals("")){
                 res.append(words[i]);
-                if(i!=0) res.append(" ");
+                if(i!=0) res.append(" ");  // when we reach to the last word no need to append a space
             }
         }
-        return res.toString();
+        return res.toString();  // convert the result in StringBuilder type to string and return the result
     }
 }
