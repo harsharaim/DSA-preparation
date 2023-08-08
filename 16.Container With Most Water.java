@@ -16,7 +16,7 @@
 // Input: height = [1,1]
 // Output: 1
 
-// My initial approach  --> Time Limit Exceeded 56/61
+// My initial approach  --> Time Limit Exceeded 56/61 testcases passed
 // Time complexity: O(2n)
 // Space complexity: O(1)
 class Solution {
