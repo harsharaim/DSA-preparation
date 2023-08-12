@@ -13,6 +13,7 @@
 // Example 2:
 // Input: nums = [5], k = 1
 // Output: 5.00000
+
 // Time complexity: O(n)
 // Space complexity: O(1)
 class Solution {
