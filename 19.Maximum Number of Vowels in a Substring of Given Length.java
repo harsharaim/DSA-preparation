@@ -24,25 +24,20 @@
 // Space complexity:O(1)
 class Solution {
     public int maxVowels(String s, int k) {
-        Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
-        int count = 0;
-        for (int i = 0; i < k; i++) {
-            if (vowels.contains(s.charAt(i))) {
-                count++;
-            }
+        int count=0;
+        for(int i=0;i<k;i++){
+            if(isvowel(s.charAt(i))) count++;
         }
-        int maxCount = count;
-        for (int i = k; i < s.length(); i++) {
-            if (vowels.contains(s.charAt(i))) {
-                count++;
-            }
-            if (vowels.contains(s.charAt(i - k))) {
-                count--;
-            }
-            maxCount = Math.max(maxCount, count);
+        int max_count=count;
+        for(int i=k;i<s.length();i++){
+            if(isvowel(s.charAt(i))) count++;
+            if(isvowel(s.charAt(i-k))) count--;
+            max_count=Math.max(max_count,count);
         }
-        return maxCount;
+        return max_count;
+    }
+    public boolean isvowel(char c){
+      if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')return true;
+      return false;
     }
 }
-
-
