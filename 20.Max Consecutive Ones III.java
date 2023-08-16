@@ -15,6 +15,26 @@
 // Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
 // Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
+// My Approach 1
+lass Solution {
+    public int longestOnes(int[] nums, int k) {
+        int flip=0;
+        int left=0,right=0;
+        int ans=0;
+        while(right<nums.length){
+            if(nums[right]==0) flip++;
+            while(flip>k){
+              if(nums[left]==0) flip--;
+              left++;
+            }
+            right++;
+            ans=Math.max(ans,right-left);
+        }
+        return ans;
+    }
+}
+
+// Second Approach
 class Solution {
     public int longestOnes(int[] nums, int k) {
         int flip=0;
