@@ -24,6 +24,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode temp=head;
