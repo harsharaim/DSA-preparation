@@ -47,3 +47,50 @@ class Solution {
         return ans.length();
     }
 }
+
+
+
+// solution using stack
+import java.util.Scanner;
+import java.util.Stack;
+public class CompressString {
+    static String maxUniqueExponent(String s){
+        Stack<Character> stack=new Stack<>();
+        int count=1;
+        for(int i=0;i<s.length();i++){
+            if(!stack.isEmpty() && stack.peek()==s.charAt(i)) count++;
+            else{
+                if(count>1){
+                    String countstr=String.valueOf(count);
+                    for(char c:countstr.toCharArray()){
+                        stack.push(c);
+                    }
+                }
+                 stack.push(s.charAt(i));
+                count=1;
+            }
+        }
+        if(count>1){
+          String countstr=String.valueOf(count);
+          for(char c:countstr.toCharArray()){
+            stack.push(c);
+          }
+        }
+        StringBuilder strb=new StringBuilder();
+        while(!stack.isEmpty()){
+            strb.append(stack.pop());
+        }
+        strb.reverse();
+        return strb.toString();
+    }
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String str=scan.nextLine();
+        scan.close();
+        String ans=maxUniqueExponent(str);
+        System.out.println("Resultant string is:"+ans);
+    }
+}
+
+
